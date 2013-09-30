@@ -7,6 +7,9 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'simple_form'
 gem 'ckeditor'
+gem "carrierwave"
+gem "mini_magick"
+gem 'social-share-button'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
