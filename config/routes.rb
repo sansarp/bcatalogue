@@ -1,4 +1,5 @@
 Bcatalogue::Application.routes.draw do
+  mount Ckeditor::Engine => "/ckeditor"
   resources :businesses
 
   devise_for :users

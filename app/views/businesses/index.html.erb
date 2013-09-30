@@ -16,7 +16,7 @@
     <% @businesses.each do |business| %>
       <tr> 
         <td><%= business.name %></td>
-        <td><%= business.description %></td>
+        <td><%= raw(business.description) %></td>
         <td><%= business.category %></td>
         <td><%= link_to 'Show', business %></td>
         <td><%= link_to 'Edit', edit_business_path(business) %></td>

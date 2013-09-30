@@ -6,7 +6,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'simple_form'
-gem 'wysihtml5-rails'
+gem 'ckeditor'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
