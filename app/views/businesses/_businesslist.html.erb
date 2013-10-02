@@ -1,0 +1,33 @@
+<div class="tabbable">
+  <ul class="nav nav-tabs nav-stacked span4">
+
+
+    <% @businesses.each_with_index do |business, index|
+      if index == 0 %>
+        <li class="active"><a href="#pane<%=business.id%>" data-toggle="tab"><%= business.name %></a></li>
+      <% else %>
+        <li><a href='#pane<%=business.id%>' data-toggle="tab"><%=business.name%></a></li>
+      <% end  %>
+    <% end %>
+    <!--
+    <li><a href="#pane2" data-toggle="tab">Room 2</a></li>
+    <li><a href="#pane3" data-toggle="tab">Room 3</a></li>
+    <li><a href="#pane4" data-toggle="tab">Room 4</a></li>
+  -->
+  </ul>
+  <div class="tab-content">
+    <% @businesses.each_with_index do |business, index|
+      if index == 0 %>
+        <div id="pane<%=business.id%>" class="tab-pane active">
+          <%= render :partial => 'businesses/businesspartial', :locals => { :tab_id => business.id } %>
+        </div>
+      <% else %>
+        <div id="pane<%=business.id%>" class="tab-pane">
+          <%= render :partial => 'businesses/businesspartial', :locals => { :tab_id => business.id } %>
+        </div>
+      <% end %>
+    <% end %>
+    
+   
+  </div><!-- /.tab-content -->
+</div><!-- /.tabbable -->

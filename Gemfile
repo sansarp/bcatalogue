@@ -10,6 +10,7 @@ gem 'ckeditor'
 gem "carrierwave"
 gem "mini_magick"
 gem 'social-share-button'
+gem "recaptcha", require: "recaptcha/rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
