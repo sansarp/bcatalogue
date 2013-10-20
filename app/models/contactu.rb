@@ -1,9 +1,11 @@
 class Contactu
 
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
-
+  include ActiveModel::Model
+  validates :name, presence: :true
+  validates :email, presence: :true
+  validates :message, presence: :true 
+  validates :recaptcha_response_field, presence: :true
+  
   attr_accessor :name, :email, :message
 
   def initialize(attributes = {})
@@ -12,7 +14,7 @@ class Contactu
     end
   end
 
-  def persisted?
-    false
-  end
+  # def persisted?
+  #   false
+  # end
 end

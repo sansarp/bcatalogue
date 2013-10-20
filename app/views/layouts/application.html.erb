@@ -69,9 +69,10 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Quick links</li>
-              <li><%= link_to "Add business",   new_business_path   %></li>
+              <li><%= link_to "Add business", new_business_path   %></li>
               <li><%= link_to "Business list", businesses_path  %></li>
-              <li><%= link_to "Dashboard",    dashboard_path    %></li>
+              <li><%= link_to "Dashboard", dashboard_path    %></li>
+              <li><%= link_to "Contact us", new_contactu_path, "data-no-turbolink" => true %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -82,7 +83,7 @@
       </div><!--/row-->
       <hr>
       <footer>
-        Copyright &copy; 2013 <div id="lfid">Leapfrog Technology, Inc.</div> 
+        Copyright &copy; 2013 <span id="lfid">Leapfrog Technology, Inc.</span> 
       </footer>
 
     </div> <!-- /container -->

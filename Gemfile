@@ -11,6 +11,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem 'social-share-button'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'newrelic_rpm'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,17 +1,18 @@
 <h1> Contact Us </h1> 
 <p> Send a message to us using the form below <p>
-
-<%= form_for @contactus do |f| %>
-	<p> <%=  f.label :name%><br>
-	<%= f.text_field :name %>
-	</p>
-	<p> <%=  f.label :email%><br>
-	<%= f.text_field :email %>
-	</p>
-
-	<p> <%=  f.label :message%><br>
-	<%= f.text_area :message %>
-	</p>
+<ul>
+  <% @contactus.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<%= simple_form_for(@contactus, :html => { :class => 'form-horizontal' }) do |f| %>
+	<%=  f.input :name, :input_html => { :class => "span4" },:error_html => {:class=>"customized_error"} %>
 	
-	<p class="button"><%= f.submit %></p>
+
+	<%=  f.input :email, :input_html => { :class => "span4" } %>
+	
+	<%=  f.input :message, as: :text, :input_html => { :class => "span4" }, :error_html => {:class=>"customized_error"}%>
+	
+	 <%= recaptcha_tags %><br/>	
+	<%= f.submit 'Send', :class => "btn btn-primary" %>
 <% end %>
