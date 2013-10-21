@@ -30,10 +30,10 @@
 // @linkColor: #ff0000;
 
 body {
-	padding-top: 20px;
+	padding-top: 0px;
 }
 
-.navbar .brand {
+/*.navbar .brand {
     color: #317D6A;
     display: block;
     float: right;
@@ -42,7 +42,7 @@ body {
     margin-left: -20px;
     padding: 21px 20px;
     text-shadow: 0 1px 0 #FFFFFF;
-}
+} */
 
 .navbar-inner {
 	background-color: #FAFAFA;
@@ -51,7 +51,8 @@ body {
    
     border-radius: 4px 4px 4px 4px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.067);
-    min-height: 40px;
+    min-height: 10px;
+    height: 62px;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -72,11 +73,13 @@ footer
     position: relative;
     display: inline-block;
     height:30px;
-    line-height: 30px;
+    line-height: 36px;
+    font-weight: bold;
 }
 .signout_link a{
     text-decoration:none;
-    color: navy;
+    color: #A37822;
+    font-style: normal;
 }
 .brand_lf a{
     text-decoration: none;
@@ -136,15 +139,10 @@ footer
 	float: right;
 }*/
 
-.jcarouselslider1{
+/*.jcarouselslider1{
    float: left;
     position: relative;
     top: -91px; 
-  /*height: 400px;
-    left: -770px;
-    position: relative;
-    top: -83px;
-    width: 564px;*/
 }
 
 .jcarouselslider2{
@@ -157,7 +155,7 @@ footer
     top: -104px;
 }
 .navbar .divider-vertical{
-    margin-left: -1px; /* compensate border width */
+    margin-left: -1px; 
     border-left: 1px solid #e3e3e3;
     height: 29px;
   }
@@ -170,4 +168,25 @@ footer
 .customized_error{
     display: block;
     color: red
+}*/
+
+.collapse {
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 193px;
+    transition: height 0.35s ease 0s;
+}
+
+/* carousel-inner for height defining slider */
+.carousel-inner {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.carousel {
+    line-height: 1;
+    margin-bottom: -12px;
+    position: relative;
 }

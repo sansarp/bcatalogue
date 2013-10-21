@@ -1,121 +1,52 @@
-<!-- <div id="slider">
-	<%= image_tag("images/nemo.jpg", :alt => "rss feed") %>
-	<%= image_tag("images/nemo.jpg", :alt => "rss feed") %>
-	<%= image_tag("images/up.jpg", :alt => "rss feed") %>
-</div> -->
-<!--  Carousel - consult the Twitter Bootstrap docs at
-      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container"><!-- Collapsable nav bar -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Your site name for the upper left corner of the site -->
+      <a class="brand">Business redefined</a>
+ 
+      <!-- Start of the nav bar content -->
+      <div class="nav-collapse"><!-- Other nav bar content -->
+    
+        <!-- The drop down menu -->
+        <ul class="nav pull-right">
+          <li><% if devise_mapping.registerable? && controller_name != 'registrations' %>
+                  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+              <% end %>
+            </li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+              <!-- Login form here -->
+              <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                  <%= f.input :email, :required => false, :autofocus => true %>
+                  <%= f.input :password, :required => false %>
+                  <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+                </div>
 
-
-<div class="span4">
-	<div class="navbar">
-    	
-    		<div class="container-fluid signin_container">
-    	
-    					<div class="nav-collapse collapse">
-    						
-    					<ul class="nav pull-right">
-						    <li><%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  								<%= link_to "Sign up", new_registration_path(resource_name) %><br />
-								<% end -%>
-							</li>
-						    <li class="divider-vertical"></li>
-						    <li class="dropdown">
-    							<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-    								<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-    									
-    										<h2>Sign in</h2>
-
-													<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-													  <div class="form-inputs">
-													    <%= f.input :email, :required => false, :autofocus => true %>
-													    <%= f.input :password, :required => false %>
-													    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-													  </div>
-
-													  <div class="form-actions">
-													    <%= f.button :submit, "Sign in" %>
-													  </div>
-													<% end %>
-													<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-														  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-														<% end -%>
-													<%= render "devise/shared/links" %>
-													    									
-    								</div>
-    						</li>
-    					</ul>
-    					</div>
-    						<!--/.nav-collapse -->
-			</div>
-			<!--/.container-fluid -->
-    			
-	</div><!--/.navbar -->
-
-    <!--  Carousel -->
-      <!--  consult Bootstrap docs at 
-            http://twitter.github.com/bootstrap/javascript.html#carousel -->
-      <div id="this-carousel-id" class="carousel slide jcarouselslider1">
-        <div class="carousel-inner">
-          <div class="item active">
-            <%= link_to image_tag("/images/nemo.jpg"), '/' %>
-            <div class="carousel-caption">
-              <p>The Antennae Galaxies</p>
-              <p><a href="http://hubblesite.org/gallery/album/entire/pr2006046a/xlarge_web/npp/128/">Hubblesite.org &raquo;</a></p>
+                <div class="form-actions">
+                  <%= f.button :submit, "Sign in" %>
+                </div>
+              <% end %>
+              <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                <% end -%>
+              <%= render "devise/shared/links" %>
             </div>
-          </div>
-          <div class="item">
-           <%= link_to image_tag("/images/up.jpg"), '/' %>
-            <div class="carousel-caption">
-              <p>Carina Nebula: The Caterpillar</p>
-              <p><a href="http://hubblesite.org/gallery/album/entire/pr2007016e/xlarge_web/npp/128/">Hubblesite.org &raquo;</a></p>
-            </div>
-          </div>
-          <div class="item">
-            <%= link_to image_tag("/images/walle.jpg"), '/' %>
-            <a href="http://hubblesite.org/gallery/album/entire/pr2003010i/npp/128/">
-            </a>
-            <div class="carousel-caption">
-              <p>Light Echo From Star V838 Monocerotis</p>
-              <p><a href="http://hubblesite.org/gallery/album/entire/pr2003010i/npp/128/">Hubblesite.org &raquo;</a></p>
-            </div>
-          </div>
-          <div class="item">
-            <%= link_to image_tag("/images/up.jpg"), '/' %>
-            <a href="http://hubblesite.org/gallery/album/entire/pr2006024a/xlarge_web/npp/128/">
-            </a>
-            <div class="carousel-caption">
-              <p>Galaxy NGC 5866</p>
-              <p><a href="http://hubblesite.org/gallery/album/entire/pr2006024a/xlarge_web/npp/128/">Hubblesite.org &raquo;</a></p>
-            </div>
-          </div>
-        </div><!-- .carousel-inner -->
-        <!--  next and previous controls here
-              href values must reference the id for this carousel -->
-          <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-      </div><!-- .carousel -->
-      <!-- end carousel -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-    <div id="businesstabs_part">
-      <%= render "businesses/businesslist" %>
-    </div>   
-<%= javascript_include_tag 'jquery.min.js' %>
-<%= javascript_include_tag 'jquery-1.7.1.min.js' %>
-<%= javascript_include_tag 'bootstrap.min.js' %>
-    <script>
-    $(document).ready(function()
-    {
-       $('.carousel').carousel({
-          interval: 1200
-        });
-    //Handles menu drop down
-    $('.dropdown-menu').find('form').click(function (e) {
-    e.stopPropagation();
-    });
-    });
-
-    </script>
-
-   
+<div id="businesstabs_part">
+  <%= render "businesses/businesslist" %>
+</div> 
