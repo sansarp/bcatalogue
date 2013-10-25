@@ -4,7 +4,7 @@ class Contactu
   validates :name, presence: :true
   validates :email, presence: :true
   validates :message, presence: :true 
-  validates :recaptcha_response_field, presence: :true
+  # validates :recaptcha_response_field, presence: :true
   
   attr_accessor :name, :email, :message
 

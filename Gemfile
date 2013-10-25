@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem "therubyracer"
-gem 'less-rails', '>= 2.3.2' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
 gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'bcrypt-ruby'

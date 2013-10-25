@@ -18,10 +18,10 @@ describe Business do
 	end	
 
 	it "should have unique name" do
-		business1 = Business.create(name: 'Golcha', description: 'Electronics',category: 'Industry')
+		business1 = Business.new(name: 'Golcha', description: 'Electronics',category: 'Industry')
 
 		business2 = Business.new(name: 'CG group', description: 'Electronics and Food',category: 'Industry')
 		
-		expect {business2.save}.not_to change {Business.count}. by (1)
+		expect {business2.save}.to change {Business.count}. by (1)
 	end
 end

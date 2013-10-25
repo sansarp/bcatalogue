@@ -7,7 +7,7 @@ describe "User signin", :type=> :features do
 	it "requires the user to signup first" do
 		visit '/users/sign_up'
 		fill_in 'Name', with: 'Subash'
-		fill_in 'Email', with: 'test@gmail.com'
+		fill_in 'Email', with: 'connect.subash@gmail.com'
 		fill_in 'Password', with: 'password'
 		fill_in 'user_password_confirmation', with: 'password'
 		
