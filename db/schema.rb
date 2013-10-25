@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024150153) do
+ActiveRecord::Schema.define(version: 20131025051144) do
 
   create_table "businesses", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131024150153) do
     t.integer  "user_id"
   end
 
+  add_index "businesses", ["name"], name: "index_businesses_on_name", unique: true, using: :btree
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id", using: :btree
 
   create_table "ckeditor_assets", force: true do |t|

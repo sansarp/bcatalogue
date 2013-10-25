@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 gem "therubyracer"
 gem 'less-rails', '>= 2.3.2' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'bootstrap-sass'
+gem "twitter-bootstrap-rails"
+gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
+gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'bcrypt-ruby'
 gem 'simple_form'
 gem 'ckeditor'
@@ -40,8 +41,7 @@ end
 
 gem 'devise'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+
 
 # Use Uglifier as compressor for JavaScript assets
 #gem 'uglifier', '>= 1.3.0'
