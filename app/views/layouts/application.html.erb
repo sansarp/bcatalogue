@@ -33,6 +33,14 @@
   </head>
   <body>
      <body>
+     <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   
     <div class="brand">Business Catalogue</div>
     <div class="address-bar">The Heritage Plaza | Kathmandu-32  | Ganesh Man Singh Marg, Maitidevi 26892 | +977-01-4428667</div>
@@ -55,7 +63,6 @@
               <li><%= link_to "Home", dashboard_path %></li>
               <li><%= link_to "Add business", new_business_path   %></li>
               <li><%= link_to "Business list", businesses_path  %></li>
-              <li><%= link_to "Dashboard", dashboard_path    %></li>
               <li><%= link_to "Contact us", new_contactu_path, "data-no-turbolink" => true %></li>
               <% if user_signed_in? %>
               <div class = "signout_link">
@@ -69,7 +76,7 @@
 
     <div class="container">
 
-      <% if current_page?(controller: 'sessions', action: 'new') %>
+      <% unless user_signed_in? %>
       <div class="row">
         <div class="box">
           <div class="col-lg-12 text-center">
@@ -79,6 +86,7 @@
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                 <li data-target="#carousel-example-generic" data-slide-to="3"></li>
               </ol>
             
               <!-- Wrapper for slides -->
@@ -91,6 +99,9 @@
                 </div>
                 <div class="item">
                   <img class="img-responsive img-full" src="/images/slide-3.jpg" >
+                </div>
+                <div class="item">
+                  <img class="img-responsive img-full" src="/images/slide-4.jpg" >
                 </div>
               </div>
             
@@ -107,7 +118,6 @@
         </div>
       </div>
       <% end %>
-
       <div class="row">
         <div class="box">
           <div class="col-lg-12">
@@ -120,14 +130,19 @@
 
       <div class="row">
         <div class="box">
-          <div class="col-lg-12">
-            some contents
-        </div>
+          <div class="col-lg-12" style="float:left"><!-- Facebook Badge START --><a href="https://www.facebook.com/pages/BCatalogue-Corporation/556170334452049" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="BCatalogue Corporation">BCatalogue Corporation</a><br/><a href="https://www.facebook.com/pages/BCatalogue-Corporation/556170334452049" target="_TOP" title="BCatalogue Corporation"><img src="https://badge.facebook.com/badge/556170334452049.2096.1084215799.png" style="border: 0px;" /></a><br/><!-- Facebook Badge END -->
           </div>
+           <div style="text-align:justify; font-family:georgia,serif;font-size:14px">
+           <h3> Local City Directory Software</h3>
+            Local City DirectoriesCities, entrepreneurs and local organizations are always looking for a way to create a new revenue, new businesses with real value. One market that is yielding high returns and is predicted to have continued growth over the next decade is online and mobile marketing. A local web directory can add value to your existing products and services, improve your site's SEO and give your members powerful content management and marketing tools.
+
+            360Directories is a robust online and mobile directory software. Our proprietary tools allow you to create a local online representation of your community and promote area businesses with an easy-to-use, low-cost business-focused program. Our software is ready to be customized for your community, all you will need is a name and the desire to share your community.
+          </div><br><br><br>
         </div>
       </div>
 
     </div><!-- /.container -->
+   
     
     <footer>
       <div class="container">

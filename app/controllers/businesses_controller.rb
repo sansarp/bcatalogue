@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = Business.all
+    @businesses = Business.where(:user_id => current_user.id)
   end
 
   # GET /businesses/1
@@ -25,8 +25,9 @@ class BusinessesController < ApplicationController
   # POST /businesses
   # POST /businesses.json
   def create
-    @business = Business.new(business_params)
-
+    # @business = Business.new(business_params)
+    @business = current_user.businesses.build(business_params)
+    
     respond_to do |format|
       if @business.save
         format.html { redirect_to @business, notice: 'Business was successfully created.' }
@@ -73,6 +74,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:name, :description, :category)
+      params.require(:business).permit(:name, :description, :category, :user_id)
     end
 end

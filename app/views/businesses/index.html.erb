@@ -1,24 +1,12 @@
-<h1>Listing businesses</h1>
+<h3>Listing businesses</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @businesses.each do |business| %>
       <tr> 
         <td><%= social_share_button_tag(business.name, :url => "business_path") %></td>
         <td><%= business.name %></td>
         <td><%= raw(business.description) %></td>
-        <td><%= business.category %></td>
         <td><%= link_to 'Show', business %></td>
         <td><%= link_to 'Edit', edit_business_path(business) %></td>
         <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
