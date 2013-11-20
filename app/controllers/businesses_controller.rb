@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = Business.where(:user_id => current_user.id)
+    @businesses = Business.where(:user_id => current_user.id) dd
   end
 
   # GET /businesses/1

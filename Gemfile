@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem "therubyracer"
 gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'bcrypt-ruby'
 gem 'simple_form'
@@ -23,6 +24,9 @@ group :development, :test do
 	gem 'carrierwave'
 	gem 'rmagick'
 	gem 'annotate'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'meta_request'
 end
 group :production do
 	 #gem 'pg'
