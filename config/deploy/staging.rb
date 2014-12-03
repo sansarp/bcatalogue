@@ -60,7 +60,7 @@ forward_agent: true
 set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app =>bq_staging
-set :deploy_to, 'home/ec2-user/bcatalogue'
+set :deploy_to, '/home/ec2-user/bcatalogue'
 
 set :stage, :staging
 set :rails_env, :staging
