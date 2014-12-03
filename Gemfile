@@ -19,15 +19,18 @@ gem 'rails', '4.0.0'
 gem 'rails_12factor'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
+	gem 'capistrano-rails', '~> 1.1.2'
+  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano-bundler', '~> 1.1.3'
 	gem 'mysql2'
 	gem 'pry-rails'
 	gem 'carrierwave'
-	gem 'rmagick'
+	# gem 'rmagick'
 	gem 'annotate'
 end
 group :production do
 	 #gem 'pg'
-	 
+
 end
 group :test do
 	gem 'database_cleaner'
@@ -35,7 +38,7 @@ group :test do
 	gem 'capybara'
 	gem 'launchy'
 	gem 'selenium-webdriver'
-	gem 'shoulda-matchers' 
+	gem 'shoulda-matchers'
 end
 
 gem 'devise'
